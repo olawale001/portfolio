@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-info text-center">My Portifolio</h1>
+<div class="container" >
+
+    <p class="fs-3">Welcome to my personal portfolio. I am a software engineer who has a passion for building innovative and user-friendly web applications. I have worked on various projects, including e-commerce websites, social media platforms, and mobile apps.</p>
+    <p>Some of my projects include:</p>
+    <ul>
+        <li>E-commerce website for a local fashion store</li>
+        <li>Social media platform for sharing fashion tips and inspiration</li>
+        <li>Mobile app for managing a personal fitness routine</li>
+        <li>Online shopping cart for a small retail store</li>
+        <li>Data Analysis for Health Care Center </li>
+        <li>Custom-built website for a local art gallery</li>
+        <li>Custom-built website for a local music festival</li>
+        <li>Custom-built website for a local food blog</li>
+        <li>Custom-built website for a local dance studio</li>
+        <li>Website for a local photography studio</li>
+        <li>Custom-built website for a local bookstore</li>
+    </ul>
+    <p>Feel free to reach out if you have any questions or need further information about my work.</p>
+
+</div>
+
+<div class="container">
+    <h2>Projects</h2>
+    <p>Click to view more details about each project.</p>
+    
+    <div class="row">
+        {% for project in projects %}
+        {% include 'project_card.html' with project=project %}
+        {% endfor %}
+        <div class="col-md-4" >
+            <a href="{% url 'project_index' %}">View All Projects</a>
+        </div>
+       
+    </div>
+</div>
+<div class="container">
+    <h2>Contact Information</h2>
+    <p>Email: abdullateefyusuf80@gmail.com</p>
+    <p>Phone: (+234) 8157566062</p>
+</div>
+
+
+{% endblock content %}
+

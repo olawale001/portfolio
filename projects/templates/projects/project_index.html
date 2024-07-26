@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Projects</h1>
+<div class="container">
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-sm-4">
+            <div class="card">
+                {% if project.image %}
+                <img class="card-img-top" src="{{ project.image.url}}" alt="{{ project.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                    <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">View Project</a>
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+</div>
+
+
+{% endblock %}
